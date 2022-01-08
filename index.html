@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            width: 100vw;
+            height: 5vh;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c82f3;
+            font-size: 3em;
+            font-style: oblique;
+        }
+        
+        h1:hover {
+            color: rgb(181, 241, 40);
+        }
+        
+        div {
+            text-align: center;
+            padding-top: 10rem;
+        }
+        
+        input {
+            width: 15rem;
+            height: 3rem;
+            text-align: center;
+            border-radius: 3rem;
+            border: 2px solid #dada4a;
+        }
+        
+        button {
+            background-color: #524e50;
+            color: rgb(231, 201, 81);
+            padding: 2px;
+            font-weight: bolder;
+            font-size: xx-large;
+            box-shadow: 7px 5px 10px 0px #524e51;
+        }
+        
+        button:hover {
+            background-color: rgb(243, 121, 99);
+            color: black
+        }
+        
+        p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Find Factorial Number</h1>
+    </nav>
+    <div>
+
+        <input type="number" id="userInput" placeholder="Enter number" /><br><br>
+        <button onclick="Fact()">Find</button>
+        <div class="result">
+            <h5>Your final factorial</h5>
+            <p></p>
+        </div>
+
+    </div>
+    <script>
+        function Factorial(num) {
+            if (num == 0) return 1;
+            else
+                return num * Factorial(num - 1);
+        }
+
+        function Fact() {
+            var userInput = document.getElementById("userInput").value;
+            if (userInput == "")
+                alert("Enter any number");
+            else if (userInput >= 0) {
+                const Call = Factorial(userInput);
+
+                document.querySelector("p").innerText = Call;
+            }
+        }
+    </script>
+</body>
+
+</html>
